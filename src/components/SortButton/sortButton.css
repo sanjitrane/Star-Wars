@@ -1,0 +1,27 @@
+.sort-btn{
+  position: relative;
+}
+
+.sort-btn ul{
+  background-color: var(--white);
+  border: 1px solid var(--borderGray);
+  border-radius: 4px;
+  position:absolute;
+  padding: unset;
+}
+
+.sort-btn ul li{
+  list-style: none;
+  font-size: 14px;
+  cursor: pointer;
+  color: var(--textColor);
+  margin: 8px 0;
+}
+
+.sort-btn ul li:hover{
+  background-color: var(--hoverGray);
+}
+
+.sort-btn ul li span{
+  padding:0px 8px;
+}

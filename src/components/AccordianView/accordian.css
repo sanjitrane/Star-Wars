@@ -1,0 +1,15 @@
+.accordion-wrapper {
+  border-bottom: 1px solid var(--borderGray);
+  overflow: hidden;
+}
+
+.header {
+  background-color: var(--white);
+  cursor: pointer;
+  align-items: center;
+}
+
+.content {
+  background-color: #ffffff;
+  border-top: 1px solid #ccc;
+}

@@ -1,0 +1,14 @@
+.rating-wrapper{
+  display:flex;
+  gap:2px;
+}
+
+.rating-wrapper img{
+  width:12px;
+  height: auto;
+}
+
+.rating-wrapper p{
+  font-weight: bold;
+  color: var(--textColor);
+}

@@ -1,0 +1,13 @@
+.toolbar-wrapper{
+  background-color: var(--bgGray);
+  position: fixed;
+  display: flex;
+  border-bottom: 1px solid var(--borderGray);
+  height:44px;
+  width:100%;
+  top:var(--headerHeightDefault);
+  padding:6px;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+}

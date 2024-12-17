@@ -1,0 +1,23 @@
+.search-bar{
+  display:flex;
+  gap:6px;
+  border: 1px solid var(--borderGray);
+  border-radius: 4px;
+  padding: 4px;
+  justify-content: flex-start;
+  align-items: center;
+  flex:1;
+}
+
+.search-bar img{
+  height:15px;
+  width: auto;
+  color: var(--textColor);
+  filter: invert(30%) sepia(100%) saturate(300%) hue-rotate(180deg) brightness(90%) contrast(90%);
+  padding-left:4px;
+}
+
+.search-bar input{
+  font-size: 12px;
+  width:100%;
+}

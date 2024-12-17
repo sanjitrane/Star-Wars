@@ -1,0 +1,7 @@
+.badge{
+  padding:4px;
+  color:var(--darkBlue);
+  border: 1px solid var(--darkBlue);
+  border-radius: 20px;
+  display: flex;
+}

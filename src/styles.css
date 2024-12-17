@@ -1,0 +1,57 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+p {
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+#root, #__next {
+  isolation: isolate;
+  --white: #fff;
+  --borderGray: #d1d9e0;
+  --bgGray:#f7f8fa;
+  --headerHeightDefault: 63px;
+  --textColor:#6f7173;
+  --hoverGray:#eef4fc;
+  --hoverBlue: #b8e5f5;
+  --darkBlue: rgb(47, 147, 181);
+  --containerDefaultTop:107px;
+}
+
+.container{
+  margin-top:var(--containerDefaultTop);
+  display: flex;
+  width:100%;
+}
+
+.container > * {
+  flex:1;
+  box-sizing: border-box;
+}

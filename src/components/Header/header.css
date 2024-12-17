@@ -1,0 +1,31 @@
+
+.header-wrapper{
+  position: fixed;
+  display:flex;
+  top:0;
+  left:0;
+  width:100%;
+  padding:6px;
+  background-color:var(--white);
+  border-bottom: 1px solid var(--borderGray);
+  height:var(--headerHeightDefault);
+}
+
+.header-wrapper img{
+  width: 50px;
+  height:50px;
+}
+
+@media (max-width: 768px) {
+  .header-wrapper {
+    flex-direction: column; 
+  }
+}
+
+@media (max-width: 480px) {
+  .header-wrapper {
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
+  }
+}

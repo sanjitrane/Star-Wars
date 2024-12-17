@@ -1,0 +1,42 @@
+.episode-wrapper{
+  display:flex;
+  padding: 4px;
+  border-bottom: 1px solid var(--borderGray);
+  align-items: center;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.episode-wrapper:hover, .episode-wrapper.selected{
+  background-color: var(--hoverBlue);
+}
+
+
+
+.episode-number{
+  min-width: 100px;
+  padding:4px;
+  text-transform: uppercase;
+}
+
+.episode-name{
+  flex-grow: 1;
+  padding:4px;
+}
+
+.rating{
+  min-width: 200px;
+  padding: 4px;
+}
+
+.year{
+  min-width:100px;
+  padding:4px;
+  text-align: right;
+}
+
+@media (max-width: 990px) {
+  .episode-wrapper{
+    border-bottom: none;
+  }
+}
