@@ -50,9 +50,10 @@ const EpisodeList = ()=>{
       {error && <p>{error}</p>}
       {list.map((episode)=>{
         return isDesktop ?  
-        <Suspense key={episode.episode_id} fallback={<Shimmer lines={2}/>}><EpisodeEntryComponent  data={episode}/></Suspense>
-        : <Suspense key={episode.episode_id} fallback={<Shimmer lines={2}/>}><AccordianComponent episode={episode}/></Suspense>
+        <Suspense key={episode.episode_id} fallback={<Shimmer lines={1}/>}><EpisodeEntryComponent  data={episode}/></Suspense>
+        : <Suspense key={episode.episode_id} fallback={<Shimmer lines={1}/>}><AccordianComponent episode={episode}/></Suspense>
       })}
+      
     </div>
   )
 }

@@ -11,8 +11,6 @@
   background-color: var(--hoverBlue);
 }
 
-
-
 .episode-number{
   min-width: 100px;
   padding:4px;
@@ -26,7 +24,6 @@
 
 .rating{
   min-width: 200px;
-  padding: 4px;
 }
 
 .year{

@@ -17,12 +17,11 @@ const [data, setData] = useState<EpisodeDetail | null>(null)
 useEffect(()=>{
   if(selected){
     const ratingObj = getRatingObj(ratings, "episodeId", selected.episode_id)
-    
     const withRatings:EpisodeDetail = {
       ...selected, 
       ratings: ratingObj?.Ratings || [], 
       poster: ratingObj?.Poster || "", 
-      imdbRating: ratingObj?.imdbRating || "", 
+      imdbRating: ratingObj?.imdbRating || "0", 
     }
     setData(withRatings)
   }else{
@@ -36,7 +35,6 @@ if(!selected){
     <p>Star Wars is an American epic space opera media franchise created by George Lucas, which began with the eponymous 1977 film and quickly became a worldwide pop culture phenomenon. The franchise has been expanded into various films and other media, including television series, video games, novels, comic books, theme park attractions, and themed areas, comprising an all-encompassing fictional universe. Star Wars is one of the highest-grossing media franchises of all time.</p>
   </section>
 }
-
   return(
     <section className="detail-section">
       <h2 className="title">{data?.title}</h2>
@@ -51,7 +49,10 @@ if(!selected){
       <p className="director">{`Directed by: ${data?.director}`}</p>
       <div className="ratings-wrapper">
         <p className="ratings-title">Average rating:</p>
-        <Rating showStars={true} score={6} maxScore={10} />
+        <Rating 
+        showStars={true} 
+        score={data?.imdbRating ? parseFloat(data?.imdbRating) || 0 : 0}
+        maxScore={10} />
       </div>
       {data?.ratings && (
         <div className="badges-wrapper">
