@@ -34,4 +34,4 @@ Run:
 
 # Hosting:
 
-- The website is hosted on gh-pages at: [text](https://sanjitrane.github.io/Star-Wars/)
+- The website is hosted on gh-pages at: [here](https://sanjitrane.github.io/Star-Wars/)
