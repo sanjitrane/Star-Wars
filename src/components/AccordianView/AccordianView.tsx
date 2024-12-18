@@ -1,10 +1,16 @@
-import React, { useState } from "react";
+/** Accordian view to display the list  in viewport less than 998px*/
+/**
+ * Based on the selected episode in the state, the detail view is rendered.
+ */
+
+import React, { memo } from "react";
 import "./accordian.css";
 import EpisodeEntry from "../EpisodeEntry/EpisodeEntry"
 import DetailView from "../DetailView/DetailView";
 import { Episode } from "../../types";
-import { useSelector, useDispatch } from "react-redux";
-import { AppDispatch, RootState } from "../../app/store";
+import { useSelector } from "react-redux";
+import { RootState } from "../../app/store";
+
 
 interface AccordionProps {
   episode: Episode; 
@@ -28,4 +34,4 @@ const Accordion = ({ episode }:AccordionProps) => {
   );
 };
 
-export default Accordion;
+export default memo(Accordion);

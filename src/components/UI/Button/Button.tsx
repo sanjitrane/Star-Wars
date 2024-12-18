@@ -1,3 +1,7 @@
+/**
+ * Button component which can be customised as per the passed props.
+ */
+
 import React from "react";
 import "./button.css";
 
@@ -17,6 +21,6 @@ disabled = false,
 styles=''
 }:BtnProps)=>{
   return (
-    <button className={`btn ${styles}`} onClick={onClick}>{children}</button>
+    <button type={type} disabled={disabled} className={`btn ${styles}`} onClick={onClick}>{children}</button>
   )
 }

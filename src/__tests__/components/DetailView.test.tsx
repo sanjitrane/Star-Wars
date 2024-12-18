@@ -48,7 +48,7 @@ const initialState: RootState = {
   },
 };
 
-describe('DetailView Component', () =>{
+describe.only('DetailView Component', () =>{
   let store:ReturnType<typeof configureStore>
   beforeEach(()=>{
     store = configureStore({reducer:rootReducer, preloadedState: initialState});

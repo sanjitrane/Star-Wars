@@ -1,12 +1,20 @@
+/**View to display the episode details */
+/**
+ * It uses the info from 'selected' key in the episode state of the store to load the data.
+ * External components: to prevent re-rendering of parent when the data is updated in these.
+ * Badge, Ratings, Poster
+ */
+
 import React, { memo, useEffect, useState } from "react";
 import { Rating } from "../Rating/Rating"
 import { Badge } from "../UI/Badge/Badge";
 import { useSelector } from "react-redux";
 import { RootState } from "../../app/store";
-import "./detailView.css";
-import { Episode, EpisodeDetail } from "../../types";
+import { EpisodeDetail } from "../../types";
 import { getRatingObj } from "../../utils/helpers";
 import { Poster } from "../Poster/Poster";
+import "./detailView.css";
+import { settings } from "../../utils/settings";
 
 const DetailView = ()=>{
 const {selected} = useSelector((state:RootState)=>state.episodes);
@@ -14,6 +22,9 @@ const {ratings} = useSelector((state:RootState)=>state.ratings);
 
 const [data, setData] = useState<EpisodeDetail | null>(null)
 
+/** The data from selected key is merged with the data from ratings state (extracted with the episode_id).
+ * The merged data is then used to populate the fields.
+ */
 useEffect(()=>{
   if(selected){
     const ratingObj = getRatingObj(ratings, "episodeId", selected.episode_id)
@@ -29,6 +40,7 @@ useEffect(()=>{
   }
 },[selected])
 
+/**If no movie is selected then the default text is displayed in the detail view */
 if(!selected){
   return <section className="detail-section">
     <h3>Star Wars</h3>
@@ -52,7 +64,7 @@ if(!selected){
         <Rating 
         showStars={true} 
         score={data?.imdbRating ? parseFloat(data?.imdbRating) || 0 : 0}
-        maxScore={10} />
+        maxScore={settings.maxRating} />
       </div>
       {data?.ratings && (
         <div className="badges-wrapper">

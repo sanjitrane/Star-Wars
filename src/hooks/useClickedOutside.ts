@@ -1,3 +1,4 @@
+/**Hook to capture any click outside the passed eleemnt */
 import { RefObject, useEffect } from "react"
 
 type EventType = MouseEvent | TouchEvent

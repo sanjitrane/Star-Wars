@@ -1,3 +1,6 @@
+/**
+ * Component to display the passed information in a badge design.
+ */
 import React from "react";
 import "./badge.css";
 

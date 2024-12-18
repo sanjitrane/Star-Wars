@@ -1,3 +1,9 @@
+/**
+ * Search Bar component to filter out the data
+ * External Component: 
+ * Input 
+ */
+
 import React, { useCallback, useRef } from "react";
 import { Input } from "../UI/Input/Input";
 import { settings } from "../../utils/settings";
@@ -17,6 +23,7 @@ export const SearchBar = ()=>{
     dispatch(assignSearch(str))
   },[])
 
+  /**Debounce used to prevent flickering of listed data when user types in the input field */
   const debounced = useDebounce(onHandleChange, 500)
 
   const onHandleImageClick = ()=>{

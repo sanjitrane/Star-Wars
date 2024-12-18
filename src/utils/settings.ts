@@ -1,3 +1,4 @@
+/**All hard-coded info can be stored here and utilised in the project */
 const IMG_BASE_PATH = "./assets";
 
 export const settings = {

@@ -1,4 +1,14 @@
+/**
+ * The component works as a select box to display the options to sort the listed data
+ * It requires :
+ * Title - to display on the button
+ * Children Config - To display the options
+ * Callback - to pass the information about the value selected to the hosting component 
+ */
+
 import React,{ useCallback, useState, useRef, RefObject} from "react"
+import { RootState } from "../../app/store";
+import { useSelector } from "react-redux";
 import { useClickedOutside } from "../../hooks/useClickedOutside";
 import { Button } from "../UI/Button/Button";
 import "./sortButton.css";
@@ -16,6 +26,7 @@ export const SortButton = ({
   childrenConfig = [],
   cb
 }:SortButtonProps)=>{
+  const {episodes} = useSelector((state:RootState)=>state.episodes)
   const ref = useRef<HTMLDivElement>(null)
   const [toggleView, onToggleView] = useState<boolean>(false)
 
@@ -28,10 +39,11 @@ export const SortButton = ({
     cb(str)
   },[cb])
 
+  /**hook used to capture click event outside this component, inorder to trigger the closing of the drop-down */
   useClickedOutside(ref as RefObject<HTMLDivElement>, ()=>onToggleView(false))
 
   return <div className="sort-btn" ref={ref}>
-    <Button onClick={onHandleToggle}>{title || "Sort by..."}</Button>
+    <Button disabled={!episodes || episodes.length === 0} onClick={onHandleToggle}>{title || "Sort by..."}</Button>
     {
     toggleView && childrenConfig.length > 0 && (
       <ul>

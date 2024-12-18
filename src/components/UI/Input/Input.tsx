@@ -1,3 +1,6 @@
+/**
+ * Input component which can be customised as per the passed props
+ */
 import React,{forwardRef} from "react";
 import "./input.css";
 

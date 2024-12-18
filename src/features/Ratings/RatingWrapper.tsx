@@ -1,4 +1,10 @@
-import React, { useEffect } from "react"
+/** This component is used to fetch the rating information based on the episode id and year passed from the parent component (EpisodeEntry).
+ * External Components:
+ * Shimmer
+ * Rating
+ */
+
+import React, { memo, useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux";
 import { RootState, AppDispatch } from "../../app/store";
 import { fetchRatings } from "./ratingsSlice";
@@ -21,6 +27,7 @@ const RatingWrapper = ({movieTitle, year, episodeId}:RatingWrapperProps)=>{
 
   const dispatch = useDispatch<AppDispatch>();
 
+  /**Fetch the rating detail  */
   useEffect(()=>{
     if(!rating){
       const onlyYr = getYearFromDate(year).toString();
@@ -37,4 +44,4 @@ const RatingWrapper = ({movieTitle, year, episodeId}:RatingWrapperProps)=>{
   </>)
 }
 
-export default RatingWrapper;
+export default memo(RatingWrapper);

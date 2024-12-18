@@ -1,4 +1,6 @@
-import React from "react";
+/** Based on the props the component decides to display rating info as stars or numbers  */
+
+import React, { memo } from "react";
 import { settings } from "../../utils/settings";
 import "./rating.css";
 
@@ -8,7 +10,7 @@ type RatingProps = {
   maxScore?:number 
 }
 
-export const Rating = ({showStars, score = 0, maxScore=10}:RatingProps)=>{
+export const Rating = memo(({showStars, score = 0, maxScore=settings.maxRating}:RatingProps)=>{
 
   const starRatings = ()=>{
     const activeStars = Math.floor(score);
@@ -27,7 +29,8 @@ export const Rating = ({showStars, score = 0, maxScore=10}:RatingProps)=>{
     return <p>{score} / {maxScore}</p>
   }
 
+  /**Conditional rendering based on the prop showStars */
   return(<div className="rating-wrapper">
     {showStars ? starRatings() : numberRating()}
   </div>)
-}
+})

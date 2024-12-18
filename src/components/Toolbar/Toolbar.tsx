@@ -1,3 +1,7 @@
+/**
+ * This component acts as a parent component to hoist the required tools. 
+ * ie; Sort Button , Search Button
+ */
 import React from "react";
 import { SortButton } from "../SortButton/SortButton";
 import { SearchBar } from "../SearchBar/SearchBar";

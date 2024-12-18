@@ -1,4 +1,6 @@
-import React, { useCallback, useMemo, useState } from 'react';
+/**Base component to host the page sections */
+
+import React from 'react';
 import Header from './components/Header/Header';
 import Toolbar from './components/Toolbar/Toolbar';
 import Layout from './Layout';

@@ -3,7 +3,7 @@ import { settings } from '../../utils/settings';
 import { Episode } from '../../types';
 
 
-type EpisodeState = {
+export type EpisodeState = {
   loading:boolean;
   error: string | null;
   episodes:Episode[];

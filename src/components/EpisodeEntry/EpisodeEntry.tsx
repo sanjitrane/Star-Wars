@@ -1,4 +1,9 @@
-import React from "react";
+/**The component  displays the episode information in the list view
+ * External Component:
+ * Rating Wrapper: to display the ratings
+*/
+
+import React, { memo } from "react";
 import RatingWrapper from "../../features/Ratings/RatingWrapper";
 import { Episode } from "../../types";
 import { useSelector, useDispatch } from "react-redux";
@@ -14,8 +19,13 @@ const EpisodeEntry = ({data}:EpisodeProps)=>{
   const {selected} = useSelector((state:RootState)=>state.episodes)
   const dispatch = useDispatch<AppDispatch>()
 
+  /**Captures the click on the episode and sets the episode id in the state. If the same episode is clicked then it sets the value to -1 */
   const onEpisodeClicked = ()=>{
+    if(selected?.episode_id === data.episode_id){
+      dispatch(selectEpisode(-1))  
+    }else{
     dispatch(selectEpisode(data.episode_id))
+    }
   }
 
 
@@ -36,4 +46,4 @@ const EpisodeEntry = ({data}:EpisodeProps)=>{
   )
 }
 
-export default EpisodeEntry
+export default memo(EpisodeEntry);

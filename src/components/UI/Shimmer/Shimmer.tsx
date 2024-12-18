@@ -1,3 +1,8 @@
+/**
+ * Shimmer component to display as a loading view when data is being loaded in the hoisted component.
+ * It displays lines or image based on the type passed.
+ * The number of animated lines can be controlled by the lines props.
+ */
 import React from "react"
 import "./shimmer.css";
 
@@ -37,7 +42,7 @@ export const Shimmer = ({ lines=2, type='lines' }:ShimmerProps)=>{
     }
   }
 
-  return(<div className="shimmer">
+  return(<div className="shimmer" data-testid="shimmer">
     {renderByType()}
   </div>)
   

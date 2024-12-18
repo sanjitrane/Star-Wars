@@ -1,4 +1,9 @@
-import React, { useState } from "react";
+/**Component to load poster image.
+ * It displays a shimmer component till the time the actual image loads.
+ * This can be futher extended by passing different size of image for different viewport.
+ */
+
+import React, { memo, useState } from "react";
 import { Shimmer } from "../UI/Shimmer/Shimmer";
 
 type PosterProps = {
@@ -7,7 +12,7 @@ type PosterProps = {
   alt: string
 }
 
-export const Poster = ({source, alt, styles=''}:PosterProps)=>{
+export const Poster = memo(({source, alt, styles=''}:PosterProps)=>{
   const [imageLoaded, setImageLoaded] = useState<boolean>(false)
   const handleImageLoad = () => setImageLoaded(true);
   return(
@@ -17,9 +22,9 @@ export const Poster = ({source, alt, styles=''}:PosterProps)=>{
       className={styles}
       src={source || ""}
       alt={alt || "Episode Poster"}
-      style={{ display: imageLoaded ? "block" : "none" }} // Hide image till it loads
-      onLoad={handleImageLoad} // Trigger when image is loaded
+      style={{ display: imageLoaded ? "block" : "none" }} 
+      onLoad={handleImageLoad} 
     />
     </>
   )
-}
+})

@@ -1,3 +1,6 @@
+/**
+ * Debounce hook to call the function after an interval of inactivity
+ */
 import { useCallback, useRef } from "react"
 
 export const useDebounce = <T extends (...args: any[]) => void>(

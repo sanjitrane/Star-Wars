@@ -1,3 +1,7 @@
+/**
+ * Hook to capturing the resize event of the window and pass it to the calling component
+ */
+
 import { useEffect, useState } from "react"
 import { useDebounce } from "./useDebounce";
 
